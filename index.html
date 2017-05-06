@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Crystal Collector!</title>
+
+  		<link rel="stylesheet" href="assets/css/reset.css" type="text/css">
+
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  		<link rel="stylesheet" href="assets/css/style.css" type="text/css">
+
+</head>
+  <body>
+ 
+<div class="container">
+	<div class="row">
+    	<div class="col-12">
+	      <p>
+	      you will be given a random number at the start of the game.<br>
+	      <br>
+	      There are four crystals below. By clicking on a crystal you will add a specific amount of points to your total score.<br>
+	      <br>
+	      You win the game by matching your total score to the random number, you lose the game if your total score goes above the random number.<br>
+	      <br>
+	      The value of each crystal is hidden from you until you click on it.<br>
+	      <br>
+	      The value of the crystals will change each time the game starts.
+	      </p>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-3" id="cystalPicks">
+			<img src="assets/images/blueCrystal.png" class="blueCrystal">
+			<img src="assets/images/redCrystal.png" class="redCrystal">
+			<img src="assets/images/greenCrystal.png" class="greenCrystal">
+			<img src="assets/images/yellowCrystal.png" class="yellowCrystal">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-6">
+			<div id="targetNumber">
+				<h1>Target Number: <span id="target"></span></h1>
+			</div>
+		</div>
+		<div class="col-xs-6">
+			<div id="totalScore">
+				<h1>Total Score: <span id="score"></span></h1>
+			</div>
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col">
+			<div id="wins">
+					<h1>Wins: <span id="winner"></span></h1>
+				<div id="loses">
+					<h1>Loses: <span id="loser"></span></h1>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+
+
+<!-- =========JAVASCRIPT========-->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+
+  <script type="text/javascript">
+
+
+  //Variables//
+
+var crystals = {
+		blue:
+		{
+			name:"blueCrystal",
+			value: 0
+		},
+		red:
+		{
+			name:"redCrystal",
+			value: 0
+		},
+		green:
+		{
+			name:"greenCrystal",
+			value: 0
+		},
+		yellow:
+		{
+			name:"yellowCrystal",
+			value: 0
+		}
+};
+
+var targetNumber = 0;
+
+var score = 0;
+
+var winner = 0;
+
+var loser = 0;
+
+
+//Function to select random numbers for Target & Crystals//
+
+var randomNum = function(max, min) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+targetNumber = randomNum(120, 19);
+		$("#target").html(targetNumber);
+
+//GAME START//
+
+var start = function() {
+
+	score = 0;
+
+	targetNumber = randomNum(120, 19);
+	
+	crystals.blue.value = randomNum (12, 1);
+	crystals.red.value = randomNum (12, 1);
+	crystals.green.value = randomNum (12, 1);
+	crystals.yellow.value = randomNum (12, 1);
+	
+};
+
+
+
+
+
+</script>
+  </body>
+</html>

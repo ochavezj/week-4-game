@@ -1,0 +1,46 @@
+body {
+	background-image: url("http://i.imgur.com/PoSSvpB.jpg");
+	background-size: 1440px 640px;
+}
+
+.col-12 {
+	background-color: rgba(191, 170, 63, .8);
+	opacity: 30%;
+	font-family: cursive;
+	font-weight: bold;
+	font-size: 20px;
+	line-height: 18px;
+	padding: 10px;
+}
+
+.col-3 {
+	margin-top: 40px;
+	background-color: rgba(245, 245, 255, .6);
+}
+
+.col {
+	background-color: rgba(245, 245, 255, .6);
+	font-family: cursive;
+}
+
+img {
+	padding: 20px;
+	height: 280px;
+	width: 280px;
+}
+
+#targetNumber {
+	background-color: rgba(245, 245, 255, .6);
+	font-family: cursive;
+	color: green;
+}
+
+
+#totalScore {
+	background-color: rgba(245, 245, 255, .6);
+	font-family: cursive;
+}
+
+#loses {
+	color: red;
+}
